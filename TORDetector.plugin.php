@@ -35,8 +35,8 @@ class Plugin_TORDetector extends Recipe_PluginAbstract
 	/**
 	 * Checks wheather the user uses TOR and logs this
 	 *
-	 * @param Login								The Login util
-	 * @param string							Session URL
+	 * @param Login	    The Login util
+	 * @param string    Session URL
 	 *
 	 * @return Plugin_TORUserDetector
 	 */
@@ -45,11 +45,11 @@ class Plugin_TORDetector extends Recipe_PluginAbstract
 		$result = Core::getQuery()->select( 'TORIPTable' , '*' , '' , "`IP`='".IPADDRESS."'" );
 		if ( Core::getDatabase()->num_rows( $result ) > 0 ) {
 			Core::getQuery()->insertInto( 'TORUserLog' , array( 
-															'ID' => '' , 
-															'UserID' => $Login->getUserId() , 
-															'IP' => IPADDRESS , 
-															'Timestamp' => time() 
-														) );
+                                                                'ID' => '' , 
+                                                                'UserID' => $Login->getUserId() , 
+                                                                'IP' => IPADDRESS , 
+                                                                'Timestamp' => time() 
+                                                            ) );
 		}
 		return $this;
 	}
