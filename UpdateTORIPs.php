@@ -1,6 +1,6 @@
 <?php
 /*
- *  Copyright (C) 2012 sateffen
+ *  Copyright (C) 2013 sateffen
  *  https://github.com/sateffen/TORDetector-for-Bengine
  *
  *  This program is free software: you can redistribute it and/or modify
