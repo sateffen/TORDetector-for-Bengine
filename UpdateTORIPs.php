@@ -17,7 +17,7 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-class Bengine_Cronjob_UpdateTORIPs extends Recipe_CronjobAbstract
+class Bengine_Game_Cronjob_UpdateTORIPs extends Recipe_CronjobAbstract
 {
 	/**
 	 * Updates all TOR IPs
