@@ -27,7 +27,7 @@ class Plugin_TORDetector extends Recipe_PluginAbstract
 	public function __construct()
 	{
 		$this->pluginName = 'TORDetector';
-		$this->pluginVersion = '1.0';
+		$this->pluginVersion = '1.1';
 		return $this;
 	}
 
