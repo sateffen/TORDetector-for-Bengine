@@ -19,7 +19,6 @@
 
 class Plugin_TORDetector extends Recipe_PluginAbstract
 {
-
 	/**
 	 * Defines basic plug in information.
 	 *
@@ -42,13 +41,13 @@ class Plugin_TORDetector extends Recipe_PluginAbstract
 	 */
 	public function onStartSession( Login $Login , $sessionURL )
 	{
-		$result = Core::getDatabase()->rowCount("SELECT * FROM `bengine_TORIPTable` WHERE IP=?",
-												array(IPADDRESS));
-		$result = 1;
+		$result = Core::getDatabase()->rowCount("SELECT * FROM `bengine_TORIPTable` WHERE IP=?", array(IPADDRESS));
+												
 		if ( $result > 0 ) {
-			Core::getDatabase()->query("INSERT INTO`bengine_TORUserLog` (`ID`,`UserID`,`IP`,`Timestamp`)
-										VALUES (NULL,?,?,?);",
-										array($Login->getUserId(), IPADDRESS, time()));
+			Core::getDatabase()->query(
+				"INSERT INTO`bengine_TORUserLog` (`ID`,`UserID`,`IP`,`Timestamp`) VALUES (NULL,?,?,?);",
+				array($Login->getUserId(), IPADDRESS, time())
+			);
 		}
 		return $this;
 	}
